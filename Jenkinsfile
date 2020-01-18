@@ -5,7 +5,7 @@ stages {
 		 agent { label 'master' }
             steps {
                 echo 'Building..'
-				sh 'pwd; sudo chmod 777 build deploy test; ./build'
+				sh 'pwd; chmod 777 build deploy test; ./build'
 				
             }
         }
@@ -13,14 +13,14 @@ stages {
 			agent { label 'slave' }
             steps {
                 echo 'Deploying to TEST environment..'
-				sh 'sudo chmod 777 build deploy test; ./deploy'
+				sh 'chmod 777 build deploy test; ./deploy'
             }
         }
         stage('test') {
 			agent { label 'slave' }
             steps {
                 echo 'Testing....'
-				sh 'sudo chmod 777 build deploy test; ./test'
+				sh 'chmod 777 build deploy test; ./test'
 					}
 				}
     }
