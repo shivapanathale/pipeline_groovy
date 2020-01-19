@@ -21,7 +21,7 @@ stages {
             steps {
                 echo 'Testing....'
 				sh 'chmod 777 build deploy test; ./test'
-					}
+		 		}
 			 } 
     }
 }
